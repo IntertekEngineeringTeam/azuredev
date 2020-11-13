@@ -57,7 +57,7 @@
     {
       "name": "[variables('vmNicName')]",
       "type": "Microsoft.Network/networkInterfaces",
-      "location": "westeurope",
+      "location": "southeastasia",
       "apiVersion": "2016-03-30",
       "dependsOn": [],
       "tags": {

@@ -24,19 +24,19 @@
     },
     "storageAccountName": {
       "type": "string",
-      "defaultValue": "t3082008genstdlrs001"
+      "defaultValue": "t4084008genstdlrs001"
     },
     "storageAccountResourceGroup": {
       "type": "string",
-      "defaultValue": "rg_3082008_prod"
+      "defaultValue": "rg_4084008_prod"
     },
     "virtualNetworkName": {
       "type": "string",
-      "defaultValue": "cchn3azvnt082008"
+      "defaultValue": "psgp4azvnt084008"
     },
     "virtualNetworkResourceGroup": {
       "type": "string",
-      "defaultValue": "rg_3082008_net"
+      "defaultValue": "rg_4084008_net"
     }
  
   },
@@ -46,18 +46,18 @@
     "vmOSDiskName": "[concat(parameters('vmName'), '_osdisk')]",
     "vmVmSize": "Standard_D2_v2",
     "vmVnetID": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
-    "vmSubnetRef": "[concat(variables('vmVnetID'), '/subnets/', 'sn_10-82-8-0_25')]",
+    "vmSubnetRef": "[concat(variables('vmVnetID'), '/subnets/', 'sn_10-84-8-0_25')]",
     "vmStorageAccountContainerName": "vhds",
     "vmNicName": "[concat(parameters('vmName'), '-nic')]",
-    "vm_avset": "as_3082008_prod_002",
-    "location": "eastasia"
+    "vm_avset": "as_4084008_prod_001",
+    "location": "southeastasia"
 
   },
   "resources": [
     {
       "name": "[variables('vmNicName')]",
       "type": "Microsoft.Network/networkInterfaces",
-      "location": "eastasia",
+      "location": "southeastasia",
       "apiVersion": "2016-03-30",
       "dependsOn": [],
       "tags": {
@@ -91,7 +91,7 @@
     {
       "name": "[parameters('vmName')]",
       "type": "Microsoft.Compute/virtualMachines",
-      "location": "eastasia",
+      "location": "southeastasia",
       "apiVersion": "2017-03-30",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', variables('vmNicName'))]"
